@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+         <title>北京邮电大学软件学院学生会</title>
+        <link href="css/css.css" rel="stylesheet" type="text/css" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+    </h:head>
+    <h:body>
+        <c:if test="#{param.get('type')!=1}">
+            <div class="box_lm2">
+            <div class="box_lm2_1">
+                <span>学院介绍</span>
+            </div>
+            <div class="box_lm2_2">
+                <img src="resource/images/by1.jpg" height="150"/>
+                <span>
+                    北京邮电大学软件学院于2001年10月18日正式成立，是教育部和原国家计委联合批准的首批35所“国家示范性软件学院”之一。
+                    目前北邮软件学院在软件工程专业方向上具有工学本科工学硕士研究生、工学博士研究生的全套教育培养体系，具有软件工程
+                    工学学士/硕士/博士和工程硕士学位的授予权。建院以来，学院始终依托北京邮电大学在信息通信领域的雄厚实力，重点在通信
+                    软件和企业信息化等方面培养“高层次、实用型、国际化”的优秀软件人才
+                </span>
+            </div>
+            </div>
+
+            <div class="box_right">
+                <div class="box_right_1">
+                    <div class="box_right_1_1">
+                        <div class="z"><span>部门简介</span></div>
+                        <div class="i">
+                            <p:link value="more" target="center" outcome="center.xhtml">
+                                  <f:param name="type" value="1"/>
+                                  <f:param name="index" value="1"/>
+                             </p:link>
+                        </div>
+                    </div>
+                    <div class="box_right_1_2">
+                        <ul>
+                            <c:forEach items="#{bodyBean.getEssayList(1)}" var="essay">
+                                <li>
+                                    <p:link target="_blank" outcome="essay.xhtml" value="#{essay.ntitle}">
+                                        <f:param name="essay" value="#{essay.nid}"/>
+                                        <f:param name="index" value="1"/>
+                                    </p:link>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box_right_2">
+                    <div class="box_right_2_1">
+                        <div class="z"><span>部门风采</span></div>
+                        <div class="i">
+                            <p:link value="more" target="center" outcome="center.xhtml">
+                                <f:param name="type" value="1"/>
+                                <f:param name="index" value="4"/>
+                            </p:link>
+                        </div>
+                    </div>
+                    <div class="box_right_2_2">
+                        <ul>
+                            <c:forEach items="#{bodyBean.getEssayList(4)}" var="essay">
+                                <li>
+                                    <p:link target="_blank" outcome="essay.xhtml" value="#{essay.ntitle}">
+                                        <f:param name="essay" value="#{essay.nid}"/>
+                                        <f:param name="index" value="4"/>
+                                    </p:link>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </c:if>
+        <c:if test="#{param.get('type')==1}">
+            <div class="box_2">
+                <div class="lieb">
+                    <ul>
+                        <li><a href="center.xhtml" target="center">首页</a></li>
+                        <li>>></li>
+                        <li>#{bodyBean.pairs.type.tname}</li>
+                    </ul>
+                </div>
+                <div class="lieb_1">
+                    <ul>
+                        <c:forEach items="#{bodyBean.essayList}" var="news">
+                            <li>
+                                <h:link value="#{news.ntitle}" target="_blank" outcome="essay.xhtml">
+                                   <f:param  name="essay" value="#{news.nid}" />
+                                   <f:param name="index" value="#{param.get('index')}"/>
+                                   <span class="time">Date:#{news.dateString}</span>
+                                </h:link>
+                            </li>
+                                            
+                        </c:forEach>
+     
+                    </ul>
+                </div>
+            </div>
+        </c:if>              
+                    
+               
+    </h:body>
+</html>
+

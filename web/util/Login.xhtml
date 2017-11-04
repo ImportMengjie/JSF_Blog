@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>登录</title>
+    </h:head>
+    <h:body>
+      
+      
+     
+        
+        <h:form id="form_login" >
+            <p:panel header="登录">
+                <h:panelGrid columns="3"> 
+                    <p:outputLabel for="ID" value="学号:"/>
+                    <p:inputText id="ID" value="#{userBean.studentID}" required="true" >
+                        <f:ajax event="change" />
+                        <f:validateLength minimum="2" maximum="45"/>
+                    </p:inputText>
+                    <p:message id="mes_id" for="ID" showSummary="true"/>
+                    
+                    <p:outputLabel for="pw" value="密码:" />
+                    <p:password id="pw"  value="#{userBean.password}" required="true" validator="#{userBean.validateLogin}" >
+                         <f:validateLength minimum="6" maximum="16" />
+                         
+                    </p:password>
+                    <p:message id="mes_pw" for="pw" showSummary="true"/>
+                    
+                    <p:commandButton action="/ok.xhtml" value="登录" update="mes_pw mes_id">
+                        <f:param  name="type" value="login"/>       
+                        <f:param name="essay" value="#{param.get('essay')}"/>
+                        <f:param name="index" value="#{param.get('index')}"/>
+                    </p:commandButton>
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+       
+          
+ 
+    
+    </h:body>
+</html>
+

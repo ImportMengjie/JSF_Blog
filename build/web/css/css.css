@@ -1,0 +1,346 @@
+/* CSS Document */
+/* 首页*/
+.box {
+	width:230px;
+	height:auto;
+	float:left;
+	margin-top:10px;
+}
+.box_lm {
+	width:230px;
+	height:auto;
+}
+.box_lm_1 {
+	width:210px;
+	height:35px;
+	background-color: blue;
+	padding-left:20px;
+}
+.box_lm_1 span {
+	font-size:14px;
+	font-family:"宋体";
+	color:#FFF;
+	margin:0px 80px 0 20px;
+	line-height:30px;
+}
+.box_lm_2 {
+	width:228px;
+	height:200px;
+	border:#a9020a 1px solid;
+}
+.box_lm_2 li {
+	float:left;
+	line-height:34px;
+	background:url(../img/xiao.jpg) no-repeat 14px 14px;
+	width:220px;
+	text-indent:40px;
+}
+.box_lm_2 a {
+	font-size:12px;
+	font-family:"宋体";
+	color:#000;
+}
+.box_lm_2 a:hover {
+	color:#CCC;
+}
+/*新闻中心*/
+
+.box_lm_3 {
+	width:230px;
+	height:auto;
+	margin-top:10px;
+}
+.box_lm_3_1 {
+	width:210px;
+	height:35px;
+	background-color: blue;
+	padding-left:20px;
+}
+.box_lm_3_1 span {
+	font-size:14px;
+	font-family:"宋体";
+	color:#FFF;
+	margin:0px 80px 0 20px;
+	line-height:30px;
+}
+.box_lm_3_2 {
+	width:228px;
+	height:200px;
+	;
+	border:#a9020a 1px solid;
+}
+.box_lm_3_2 li {
+	float:left;
+	line-height:34px;
+	background:url(../img/xiao.jpg) no-repeat 14px 14px;
+	width:220px;
+	text-indent:40px;
+}
+.box_lm_3_2 a {
+	font-size:12px;
+	font-family:"宋体";
+	color:#000;
+}
+.box_lm_3_2 a:hover {
+	color:#CCC;
+}
+/*录取查询*/
+.box_lm_5 {
+	width:230px;
+	height:auto;
+	margin-top:20px;
+}
+.box_lm_5_1 {
+	width:210px;
+	height:35px;
+        background-color: blue;	
+	padding-left:20px;
+}
+.box_lm_5_1 span {
+	font-size:14px;
+	font-family:"宋体";
+	color:#FFF;
+	margin:0px 80px 0 20px;
+	line-height:30px;
+}
+.box_lm_5_2 {
+	width:228px;
+	height:200px;
+	border:#a9020a 1px solid;
+}
+.box_lm_5_2 span {
+	display:block;
+	margin-top:36px;
+	font-size:14px;
+	font-family:"宋体";
+	color:#000;
+	text-align:center;
+}
+#kuang {
+	margin-top:20px;
+	border:#000 1px solid;
+	margin-left:34px;
+	line-height:20px;
+}
+#an {
+	margin-top:15px;
+	float:right;
+	margin-right:40px;
+	width:50px;
+}
+.box_lm_5_2 img {
+	margin-left:20px;
+	margin-top:10px;
+}
+/*学校简介*/
+.box_2 {
+	width:740px;
+	height:auto;
+	margin-top:10px;
+	float:right;
+}
+.box_lm2 {
+	width:730px;
+	height:220px;
+	margin-left:10px;
+}
+.box_lm2_1 {
+	width:730px;
+	height:35px;
+	border-bottom:blue 1px solid;
+}
+.box_lm2_1 span {
+	display:block;
+	float:left;
+	width:68px;
+	height:25px;
+	background-color: blue;
+	font-size:14px;
+	font-family:"宋体";
+	color:#FFF;
+	padding:10px 0 0 20px;
+}
+.box_lm2_1 img {
+	float:right;
+}
+.box_lm2_2 {
+	width:730px;
+	height:auto;
+	margin-top:10px;
+}
+.box_lm2_2 img {
+	float:left;
+	border:#000 1px solid;
+	margin-right:20px;
+	margin-bottom:19px;
+}
+.box_lm2_2 span {
+	line-height:32px;
+	font-size:12px;
+}
+/*校园活动*/
+/*图片轮播js*/
+.box_lm_4 {
+	width:730px;
+	height:230px;
+	margin-left:15px;
+	background:url(../img/js_bj.jpg) no-repeat;
+	margin-top:30px;
+}
+.js {
+	width:730px;
+	height:atuo;
+	margin-top:24px;
+}
+#demo {
+	overflow:hidden;
+	width: 650px;
+	padding-top:40px;
+	margin-left:40px;
+	float:left;
+}
+#demo img {
+	border:#CCC 1px solid;
+}
+#indemo {
+	float: left;
+	width: 800%;
+}
+#demo1 {
+	float: left;
+}
+#demo2 {
+	float: left;
+}
+#demo1_1 {
+	float:left;
+	width:149px;
+	text-align:center;
+	margin-right:20px;
+	line-height:24px;
+}
+/*校园通知*/
+.box_right {
+	width:730px;
+	height:auto;
+	margin-left:20px;
+	margin-top:25px;
+}
+.box_right_1 {
+	width:330px;
+	float:left;
+}
+.box_right_1_1 {
+	width:330px;
+	background:blue;
+	height:35px;
+}
+
+.z{ float:left;	
+  
+font-size:14px;
+	font-family:"宋体";
+	color:#FFF;
+	margin:0px 80px 0 20px;
+	line-height:30px;}
+.i{ float:right; padding-top:10px; padding-right:5px;}
+.box_right_1_2 {
+	width:328px;
+	height:200px;
+	border:#a9020a 1px solid;
+}
+.time{ float:right;font-size:12px;
+	font-family:"宋体";
+	color:#000;}
+.box_right_1_2 li {
+	height:34px;
+	float:left;
+	line-height:34px;
+	background:url(../img/xiao.jpg) no-repeat 14px 14px;
+	text-indent:40px;
+	width:300px;
+}
+
+
+.box_right_1_2 a {
+	font-size:12px;
+	font-family:"宋体";
+	color:#000;
+}
+.box_right_1_2 a:hover {
+	color:#CCC;
+}
+/*招生简章*/
+.box_right_2 {
+	width:330px;
+	float:left;
+	margin-left:60px;
+}
+.box_right_2_1 {
+	width:330px;
+	background:blue;
+	height:35px;
+}
+.box_right_2_1 span {
+	font-size:14px;
+	font-family:"宋体";
+	color:#FFF;
+	margin:0px 80px 0 20px;
+	line-height:30px;
+}
+
+.box_right_2_2 {
+	width:328px;
+	height:200px;
+	border:#a9020a 1px solid;
+}
+
+.box_right_2_2 li {
+	float:left;
+	line-height:34px;
+	background:url(../img/xiao.jpg) no-repeat 14px 14px;
+	text-indent:40px;
+	width:300px;
+}
+
+.box_right_2_2 a {
+	font-size:12px;
+	font-family:"宋体";
+	color:#000;
+}
+.box_right_2_2 a:hover {
+	color:#CCC;
+}
+
+/*校园简介*/
+.jj{ width:auto; height:10px; margin-top:5px;}
+.jj li{ float:left; font:"宋体"; font-size:12px; margin-right:10px;}
+.zs{width:auto; height:auto; margin-top:20px; text-align:center; padding:0 20px 0 20px;}
+.zs img{ border:#000 1px solid; margin-bottom:20px;}
+.zs span{font:"宋体"; font-size:12px; line-height:30px; display:block; text-indent:30px; text-align:left;}
+
+/*展示*/
+.zhans{width:auto; height:10px; margin-top:5px;}
+.zhans li{ float:left; font:"宋体"; font-size:12px; margin-right:10px;}
+.zhans_1{width:auto; height:auto; margin-top:20px; padding:0 0px 0 30px;}
+.zhans_1 img {
+	padding:1px;
+	border:#CCC 1px solid;
+}
+.zhans_1 li {
+	width:160px;
+	float:left;
+	line-height:24px;
+	text-align:center;
+	padding-left:24px;
+	padding-top:10px;
+}
+
+/*列表页*/
+.lieb{width:auto; height:10px; margin-top:5px;}
+.lieb li{ float:left; font:"宋体"; font-size:12px; margin-right:10px;}
+.lieb_1{ width:auto; height:auto; margin:20px 40px 0 40px;}
+.lieb_1 li{ width:500px; line-height:34px; border-bottom:#CCC 1px dashed; float:left;font:"宋体"; font-size:12px}
+
+/*报名*/
+.biao{ width:auto; height:auto; margin:40px 40px 0 40px;}

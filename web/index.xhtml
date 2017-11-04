@@ -1,15 +1,165 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <title>Facelet Title</title>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>        
+        <title>北京邮电大学软件学院学生会</title>
+        <link href="css/css.css" rel="stylesheet" type="text/css" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
     </h:head>
     <h:body>
-        Hello from Facelets
-        <br />
-        <h:link outcome="welcomePrimefaces" value="Primefaces 欢迎使用页" />
-        <div>        	<embed src="http://player.youku.com/player.php/sid/XMTQwMjk0MjA1Mg==/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>        </div>
+        <div class="content">
+            <div class="head">
+                <div class="head_1">
+                    <div class="top">
+                        <div class="top_logo"><img src="resource/images/北邮校徽蓝色.jpg" width="125" height="125"/></div>
+                        <div class="top_zixun">
+                            <ul>
+                                <c:if test="#{userBean.student==null}">
+                                    <li><a href="util/register.xhtml" target="_blank">注册</a></li>
+                                    <li>|</li>
+                                    <li><a href="util/Login.xhtml" target="_blank">登录</a></li>
+                                </c:if>
+                                <c:if test="#{userBean.student!=null}">
+                                    <li><p:commandLink action="index.xhtml" actionListener="#{userBean.logout}" onsuccess="location.reload();" value="注销"/></li>
+                                    <c:if test="#{userBean.student.saccess!=null}">
+                                        <li>|</li>
+                                        <li>
+                                            <p:link value="管理" target="_blank" outcome="/admin/admin.xhtml"/>
+                                        </li>
+                                    </c:if>
+                                    <li>|</li>
+                                    <li>欢迎 #{userBean.student.sname} </li>                                 
+                                </c:if>   
+                            </ul>                            
+                        </div>
+                    </div>
+                    <div class="nav">
+                        <ul>
+                            <li><h:link target="center" value="首&nbsp;页" outcome="center.xhtml"></h:link></li>
+                            <c:forEach items="#{appBean.typeList}" var="type">
+                                <li>|</li>
+                                <li>
+                                    <h:link target="center" value="#{type.tname}" outcome="center.xhtml">
+                                        <f:param name="type" value="1"/>
+                                        <f:param name="index" value="#{type.tid}"/>
+                                    </h:link>
+                                </li>
+                            </c:forEach>
+                            <li>|</li>
+                            <li><a href="#">学生论坛</a></li>
+                            <li>|</li>
+                            <li><a href="#">留言板</a></li>
+                        </ul>
+                    </div>
+                    <div id="win">
+                        <ul id="picChange">
+                            
+                            <p:imageSwitch effect="turnDown">
+                                <ui:repeat value="#{imagesView.images}" var="image">
+                                    <img src="image/#{image}" height="310" width="990"></img>
+                                 
+                                </ui:repeat>
+                            </p:imageSwitch>
+                        </ul>
+                    </div>
+                </div>                
+            </div>
+
+            <div class="main">
+                <div class="main_1">
+                    <div class="box">
+                        <div class="box_lm">
+                            <div class="box_lm_1"><span>通知公告</span>
+                                <p:link value="more" target="center" outcome="center.xhtml">
+                                     <f:param name="type" value="1"/>
+                                     <f:param name="index" value="2"/>
+                                 </p:link>
+                            </div>
+                            <div class="box_lm_2">
+                                <ul>
+                                    <h:form>
+                                        <c:forEach items="#{bodyBean.getEssayList(2)}" var="essay">
+                                            <li>
+                                                <p:commandLink actionListener="#{bodyBean.dialogShow}" value="#{essay.ntitle}" update="Dlgheader DlgText" oncomplete="PF('dlg').show()">
+                                                    <f:param name="essay" value="#{essay.nid}"/>    
+                                                </p:commandLink>
+                                            </li>
+                                        </c:forEach>
+                                        <p:dialog showEffect="explode" hideEffect="bounce" widgetVar="dlg" height="800" width="600">
+                                            <f:facet name="header">
+                                                <p:outputLabel id="Dlgheader" value="#{bodyBean.textDlgHeader}"/>
+                                            </f:facet>
+                                            <p:outputLabel escape="false" id="DlgText" value="#{bodyBean.textDlg}"/>
+                                        </p:dialog>
+                                    </h:form>
+                                </ul>
+                            </div>
+                            <div class="box_lm_3">
+                                <div class="box_lm_3_1"><span>新闻资讯</span>
+                                    <p:link value="more" target="center" outcome="center.xhtml">
+                                        <f:param name="type" value="1"/>
+                                        <f:param name="index" value="3"/>
+                                    </p:link>
+                                </div>
+                                <div class="box_lm_3_2">
+                                    <ul>
+                                        <c:forEach items="#{bodyBean.getEssayList(3)}" var="essay">
+                                            <li>
+                                                <p:link target="_blank" outcome="essay.xhtml" value="#{essay.ntitle}">
+                                                    <f:param name="essay" value="#{essay.nid}"/>
+                                                    <f:param name="index" value="3"/>
+                                                </p:link>
+                                            </li>
+                                        </c:forEach>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>                  
+                    </div>
+                    <div class="box_2">
+                        <iframe src="center.xhtml" frameborder="0"  width="100%" height="480" scrolling="no" name="center" ></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer_1">
+                    <div class="xian"></div>
+                    <div class="foot">
+                        <div class="yq">
+                            <ul>
+                                <li><a >友情链接：</a></li>
+                                <li><a href="http://www.bupt.edu.cn/">北京邮电大学</a></li>
+                                <li>|</li>
+                                <li><a href="http://jwc.bupt.edu.cn/">北京邮电大学教务处</a></li>
+                                <li>|</li>
+                                <li><a href="http://jwxt.bupt.edu.cn/">北京邮电大学教务管理系统</a></li>
+                                <li>|</li>
+                                <li><a href="http://zsb.bupt.edu.cn/">北京邮电大学招生办公室</a></li>
+                            </ul>
+                        </div>
+                        <div class="bq"><img src="resource/images/北邮校徽蓝色.jpg" width="80" heigth="80"/>
+                            <ul>
+                                <li>版权所有：在北京有一个拥有着像陈红云、白云龙、于若桐、常嘉伟，李梦捷、张钊这样乐观阳光、
+                                    积极向上、有理想、有追求、敢于拼搏、热爱学习、热爱代码的热血青年的JavaEE项目小组</li>
+                                <li>电话：010-58828201 &nbsp;18813119920 </li>
+                                <li>邮编：102209</li>
+                                <li>地址：北京市昌平区北七家镇郑各庄村北京邮电大学宏福校区</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <p></p>
+            <p></p>
+            <p></p>
+            
+        </div>
     </h:body>
 </html>
 

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h3>#{param.get('type')}</h3>
+        <h3>shabi1</h3>
+          
+        <c:if test="#{param.get('type')==null}">
+            <h3>我是sb</h3>
+            
+        </c:if>
+        
+        <c:if test="#{param.get('type')=='1'}">
+            <h3>#{param.get('index')}</h3>
+            <p:dataList value="#{bodyBean.essayList}" var="news">
+               
+                <p:link value="#{news.ntitle}" outcome="show.xhtml" target="_blank" >
+                    <f:param  name="essay" value="#{news.nid}" />
+                    <f:param name="index" value="#{param.get('index')}"/>
+                </p:link>
+                  
+            </p:dataList>
+            
+            
+        </c:if>
+    </h:body>
+</html>
+
